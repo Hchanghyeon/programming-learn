@@ -1,0 +1,7 @@
+
+l
+java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(”ÕØğüÿÿÿÿ8©†îê1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(œû¿Ø8‹Öèê1
+L	java:S106!"+Replace this use of System.out by a logger.(²•¦şÿÿÿÿ8Ş¸×ê1
+L	java:S106."+Replace this use of System.err by a logger.(‹®¦ûÿÿÿÿ8Öèê1
