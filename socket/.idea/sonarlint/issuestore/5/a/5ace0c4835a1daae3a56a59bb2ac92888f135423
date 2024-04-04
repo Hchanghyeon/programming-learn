@@ -1,7 +1,8 @@
 
-v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(˜Ûâú8ÜÒæ ê1
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ı®Àüÿÿÿÿ8ÜÒæ ê1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(˜Ûâú8ºÙ¡ê1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ı®Àüÿÿÿÿ8ºÙ¡ê1
 y
-java:S1450"WRemove the "fromUser" field and declare it as a local variable in the relevant methods.(ö…¥­úÿÿÿÿ8İÒæ ê1
-F	java:S106"+Replace this use of System.out by a logger.(Ôàì8íÒæ ê1
-L	java:S106'"+Replace this use of System.out by a logger.(—ßÿÿÿÿÿÿ8ªïæ ê1
+java:S1450"WRemove the "fromUser" field and declare it as a local variable in the relevant methods.(ö…¥­úÿÿÿÿ8¼Ù¡ê1
+L	java:S106"+Replace this use of System.out by a logger.(¶Ş¤±üÿÿÿÿ8£Åˆ¢ê1
+F	java:S106 "+Replace this use of System.out by a logger.(Ôàì8Ãşˆ¢ê1
+L	java:S106)"+Replace this use of System.out by a logger.(—ßÿÿÿÿÿÿ8°¬‰¢ê1

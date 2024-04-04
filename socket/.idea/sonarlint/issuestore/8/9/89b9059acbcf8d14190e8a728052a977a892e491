@@ -1,7 +1,8 @@
 
-l
-java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(”ÕØğüÿÿÿÿ8©†îê1
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(œû¿Ø8‹Öèê1
-L	java:S106!"+Replace this use of System.out by a logger.(²•¦şÿÿÿÿ8Ş¸×ê1
-L	java:S106."+Replace this use of System.err by a logger.(‹®¦ûÿÿÿÿ8Öèê1
+g	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒ‘İ¸ê1
+_
+java:S1163A"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8…‘İ¸ê1
+V
+java:S1143A"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8†‘İ¸ê1
+L	java:S106;"+Replace this use of System.out by a logger.(ˆŸÂ³ÿÿÿÿÿ8¿‘İ¸ê1
+L	java:S106C"+Replace this use of System.out by a logger.(“‚»×úÿÿÿÿ8Â‘İ¸ê1
