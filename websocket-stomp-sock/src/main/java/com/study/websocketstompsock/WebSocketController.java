@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.study.websocketstompsock.dto.UserMessageRequest;
+
 @RestController
 @RequestMapping("/")
 public class WebSocketController {
 
-    @MessageMapping("/send/message/{roomId}")
-    @SendTo("/sub/room/{roomId}")
+    @MessageMapping("/message/rooms/{roomId}")
+    @SendTo("/receive/rooms/{roomId}")
     public ResponseEntity<String> sendMessage(
             @DestinationVariable String roomId,
             @RequestBody UserMessageRequest userMessageRequest
     ) {
-        System.out.println(userMessageRequest.toString());
-
         return ResponseEntity.ok("test");
     }
 }
