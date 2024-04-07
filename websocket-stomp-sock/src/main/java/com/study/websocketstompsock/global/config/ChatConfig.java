@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.chat;
+package com.study.websocketstompsock.global.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
