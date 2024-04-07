@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chat
+    username: chatuser
+    password: A1b2c3!@
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: c794fe5f3378abe7fc645b77073ad396bab4841583afdadb234c083b875b37c6eb47eeeb169768cc0559554b3edee9efb8231d5313a6df8c2290bebbfa9fc885
+  access:
+    expiration: 3600
