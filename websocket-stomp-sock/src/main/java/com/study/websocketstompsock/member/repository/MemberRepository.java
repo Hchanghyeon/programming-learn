@@ -8,7 +8,7 @@ public interface MemberRepository {
 
     Member save(final Member member);
 
-    boolean existsByEmail(final String email);
+    boolean existsByNicknameOrEmail(final String nickname, final String email);
 
     Optional<Member> findByEmail(String email);
 }

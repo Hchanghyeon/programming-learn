@@ -23,7 +23,13 @@ public class Member extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "nickname", nullable = false, unique = true)
+    private String nickname;
+
+    @Column(name = "username", nullable = false)
+    private String username;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "password", nullable = false)
@@ -34,7 +40,15 @@ public class Member extends BaseEntity {
     private Role role;
 
     @Builder
-    public Member(final String email, final String password, final Role role) {
+    public Member(
+            final String nickname,
+            final String username,
+            final String email,
+            final String password,
+            final Role role
+    ) {
+        this.nickname = nickname;
+        this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;

@@ -29,7 +29,10 @@ public class MemberService {
     }
 
     private void checkMemberExists(final MemberCreateRequest memberCreateRequest) {
-        final boolean isMemberExists = memberRepository.existsByEmail(memberCreateRequest.email());
+        final boolean isMemberExists = memberRepository.existsByNicknameOrEmail(
+                memberCreateRequest.nickname(),
+                memberCreateRequest.email()
+        );
 
         if (isMemberExists) {
             throw new EntityNotFoundException("이미 사용자가 존재합니다.");
