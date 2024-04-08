@@ -2,6 +2,8 @@ package com.study.websocketstompsock.auth.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,5 +28,12 @@ public class AuthController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(accessTokenResponse);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> memberTest() {
+        final String email = (String)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        return ResponseEntity.ok(email);
     }
 }

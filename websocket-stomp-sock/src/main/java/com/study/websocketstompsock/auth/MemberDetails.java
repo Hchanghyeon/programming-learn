@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.auth.service;
+package com.study.websocketstompsock.auth;
 
 import java.util.ArrayList;
 import java.util.Collection;

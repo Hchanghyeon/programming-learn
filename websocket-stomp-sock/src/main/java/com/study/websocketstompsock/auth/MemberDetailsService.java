@@ -1,7 +1,8 @@
-package com.study.websocketstompsock.auth.service;
+package com.study.websocketstompsock.auth;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Component;
 
 import com.study.websocketstompsock.member.domain.Member;
 import com.study.websocketstompsock.member.repository.MemberRepository;
@@ -9,6 +10,7 @@ import com.study.websocketstompsock.member.repository.MemberRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
+@Component
 @RequiredArgsConstructor
 public class MemberDetailsService implements UserDetailsService {
 

@@ -4,6 +4,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.study.websocketstompsock.auth.JwtProvider;
 import com.study.websocketstompsock.auth.dto.AccessTokenResponse;
 import com.study.websocketstompsock.auth.dto.MemberLoginRequest;
 import com.study.websocketstompsock.member.domain.Member;
