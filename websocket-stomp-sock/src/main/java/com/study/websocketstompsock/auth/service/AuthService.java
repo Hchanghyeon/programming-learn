@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.study.websocketstompsock.auth.config.JwtProvider;
-import com.study.websocketstompsock.auth.dto.AccessTokenResponse;
+import com.study.websocketstompsock.auth.dto.AuthenticatedMember;
 import com.study.websocketstompsock.auth.dto.MemberLoginRequest;
 import com.study.websocketstompsock.member.domain.Member;
 import com.study.websocketstompsock.member.repository.MemberRepository;
@@ -21,13 +21,13 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
 
-    public AccessTokenResponse memberLogin(final MemberLoginRequest memberLoginRequest) {
+    public AuthenticatedMember memberLogin(final MemberLoginRequest memberLoginRequest) {
         final Member member = getMember(memberLoginRequest);
         validateMemberPassword(memberLoginRequest.password(), member.getPassword());
 
         final String accessToken = jwtProvider.generateAccessToken(member.getEmail());
 
-        return AccessTokenResponse.from(accessToken);
+        return AuthenticatedMember.from(member.getNickname(), accessToken);
     }
 
     private void validateMemberPassword(final String requestPassword, final String encryptedPassword) {

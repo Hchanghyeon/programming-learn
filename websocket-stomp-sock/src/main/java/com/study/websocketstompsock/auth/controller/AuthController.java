@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.websocketstompsock.auth.dto.AccessTokenResponse;
+import com.study.websocketstompsock.auth.dto.AuthenticatedMember;
 import com.study.websocketstompsock.auth.dto.MemberLoginRequest;
 import com.study.websocketstompsock.auth.service.AuthService;
 
@@ -21,10 +21,10 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<AccessTokenResponse> memberLogin(@RequestBody final MemberLoginRequest memberLoginRequest) {
-        final AccessTokenResponse accessTokenResponse = authService.memberLogin(memberLoginRequest);
+    public ResponseEntity<AuthenticatedMember> memberLogin(@RequestBody final MemberLoginRequest memberLoginRequest) {
+        final AuthenticatedMember authenticatedMember = authService.memberLogin(memberLoginRequest);
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(accessTokenResponse);
+                .body(authenticatedMember);
     }
 }

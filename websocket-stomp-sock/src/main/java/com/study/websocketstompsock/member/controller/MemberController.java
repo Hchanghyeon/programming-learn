@@ -21,6 +21,7 @@ public class MemberController {
 
     @PostMapping
     public ResponseEntity<MemberIdResponse> registerMember(@RequestBody final MemberCreateRequest memberCreateRequest) {
+        System.out.println(memberCreateRequest.toString());
         return ResponseEntity.ok(memberService.registerMember(memberCreateRequest));
     }
 }
