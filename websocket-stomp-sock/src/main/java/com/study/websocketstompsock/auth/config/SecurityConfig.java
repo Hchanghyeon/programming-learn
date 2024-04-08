@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.global.config;
+package com.study.websocketstompsock.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,9 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.study.websocketstompsock.auth.JwtFilter;
-import com.study.websocketstompsock.auth.JwtProvider;
-import com.study.websocketstompsock.auth.MemberDetailsService;
+import com.study.websocketstompsock.auth.exception.AccessDeniedHandlerException;
+import com.study.websocketstompsock.auth.exception.AuthenticationEntryPointException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +20,9 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
+
+    private final AuthenticationEntryPointException authenticationEntryPointException;
+    private final AccessDeniedHandlerException accessDeniedHandlerException;
 
     @Bean
     public SecurityFilterChain filterChain(
@@ -42,7 +44,11 @@ public class SecurityConfig {
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                );
+                )
+                .exceptionHandling(exceptionHandling -> {
+                    exceptionHandling.accessDeniedHandler(accessDeniedHandlerException);
+                    exceptionHandling.authenticationEntryPoint(authenticationEntryPointException);
+                });
 
         return httpSecurity.build();
     }
