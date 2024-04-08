@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.auth;
+package com.study.websocketstompsock.auth.config;
 
 import java.io.IOException;
 
@@ -40,7 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         final UserDetails userDetails = memberDetailsService.loadUserByUsername(email);
         final Authentication authentication = new UsernamePasswordAuthenticationToken(
-                userDetails.getUsername(),
+                userDetails,
                 null,
                 userDetails.getAuthorities()
         );

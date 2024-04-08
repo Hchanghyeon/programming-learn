@@ -1,7 +1,8 @@
 package com.study.websocketstompsock.member.dto;
 
+import static com.study.websocketstompsock.member.domain.Role.*;
+
 import com.study.websocketstompsock.member.domain.Member;
-import com.study.websocketstompsock.member.domain.Role;
 
 public record MemberCreateRequest(String email, String password) {
 
@@ -9,7 +10,7 @@ public record MemberCreateRequest(String email, String password) {
         return Member.builder()
                 .email(memberCreateRequest.email())
                 .password(password)
-                .role(Role.USER)
+                .role(ROLE_USER)
                 .build();
     }
 }

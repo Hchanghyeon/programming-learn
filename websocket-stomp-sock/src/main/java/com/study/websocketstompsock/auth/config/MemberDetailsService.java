@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.auth;
+package com.study.websocketstompsock.auth.config;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,6 +22,7 @@ public class MemberDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new EntityNotFoundException("사용자를 찾을 수 없습니다."));
 
         return MemberDetails.builder()
+                .memberId(member.getId())
                 .username(member.getEmail())
                 .password(member.getPassword())
                 .role(member.getRole())

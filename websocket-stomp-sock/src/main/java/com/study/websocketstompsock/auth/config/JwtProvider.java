@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.auth;
+package com.study.websocketstompsock.auth.config;
 
 import java.util.Date;
 
@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -50,6 +52,12 @@ public class JwtProvider {
     }
 
     public void verifyToken(final String token) {
-        parseToken(token);
+        try {
+            parseToken(token);
+        } catch (final ExpiredJwtException e) {
+            throw new RuntimeException("토큰이 만료되었습니다.");
+        } catch (final JwtException | IllegalArgumentException e) {
+            throw new RuntimeException("토큰이 잘못되었습니다.");
+        }
     }
 }
