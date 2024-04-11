@@ -1,4 +1,4 @@
-package com.study.websocketstompsock.chat;
+package com.study.websocketstompsock.chat.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
