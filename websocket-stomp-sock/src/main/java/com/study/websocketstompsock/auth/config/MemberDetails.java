@@ -17,6 +17,7 @@ import lombok.Getter;
 public class MemberDetails implements UserDetails {
 
     private final Long memberId;
+    private final String nickname;
     private final String username;
     private final String password;
     private final Role role;
@@ -34,7 +35,14 @@ public class MemberDetails implements UserDetails {
     }
 
     @Builder
-    public MemberDetails(final Long memberId, final String username, final String password, final Role role) {
+    public MemberDetails(
+            final Long memberId,
+            final String nickname,
+            final String username,
+            final String password,
+            final Role role
+    ) {
+        this.nickname = nickname;
         this.memberId = memberId;
         this.username = username;
         this.password = password;

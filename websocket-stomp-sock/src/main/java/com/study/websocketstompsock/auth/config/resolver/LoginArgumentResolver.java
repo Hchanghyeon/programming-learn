@@ -19,12 +19,12 @@ public class LoginArgumentResolver implements HandlerMethodArgumentResolver {
 
     @Override
     public boolean supportsParameter(final MethodParameter parameter) {
-        return parameter.withContainingClass(Long.class)
+        return parameter.withContainingClass(LoggedInMember.class)
                 .hasParameterAnnotation(Login.class);
     }
 
     @Override
-    public Long resolveArgument(
+    public LoggedInMember resolveArgument(
             final MethodParameter parameter,
             final ModelAndViewContainer mavContainer,
             final NativeWebRequest webRequest,
@@ -38,6 +38,6 @@ public class LoginArgumentResolver implements HandlerMethodArgumentResolver {
 
         final MemberDetails memberDetails = (MemberDetails)authentication.getPrincipal();
 
-        return memberDetails.getMemberId();
+        return new LoggedInMember(memberDetails.getMemberId(), memberDetails.getNickname(), memberDetails.getRole());
     }
 }
