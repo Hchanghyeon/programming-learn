@@ -1,5 +1,7 @@
 package com.study.websocketstompsock.chat.domain;
 
+import java.util.Objects;
+
 import com.study.websocketstompsock.global.domain.BaseEntity;
 
 import jakarta.persistence.Column;
@@ -36,14 +38,31 @@ public class ChatRoom extends BaseEntity {
     @Column(name = "max_member_count", nullable = false)
     private Integer maxMemberCount = 2;
 
+    @Column(name = "host_id", nullable = false)
+    private Long hostId;
+
     @Builder
-    public ChatRoom(
+    private ChatRoom(
             final ChatRoomType chatRoomType,
             final String title,
-            final Integer maxMemberCount
+            final Integer maxMemberCount,
+            final Long hostId
     ) {
         this.chatRoomType = chatRoomType;
         this.title = title;
         this.maxMemberCount = maxMemberCount;
+        this.hostId = hostId;
+    }
+
+    public boolean isChatRoomMaxMember() {
+        if (Objects.equals(currentMemberCount, maxMemberCount)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public synchronized void increaseMemberCount() {
+        this.currentMemberCount++;
     }
 }

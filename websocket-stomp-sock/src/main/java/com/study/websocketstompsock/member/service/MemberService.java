@@ -2,6 +2,7 @@ package com.study.websocketstompsock.member.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.study.websocketstompsock.member.domain.Member;
 import com.study.websocketstompsock.member.dto.MemberCreateRequest;
@@ -12,6 +13,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class MemberService {
 

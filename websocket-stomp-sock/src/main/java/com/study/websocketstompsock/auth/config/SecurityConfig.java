@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/members", "/auth/login").permitAll()
+                                .requestMatchers("/members", "/auth/login", "/chat/rooms", "/chat/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .addFilterBefore(

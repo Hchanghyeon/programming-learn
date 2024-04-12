@@ -26,7 +26,7 @@ public class AuthenticationEntryPointException implements AuthenticationEntryPoi
             final AuthenticationException authException
     ) throws IOException {
         log.error(authException.getMessage());
-
+        
         response.setContentType("application/json;charset=UTF-8");
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         final ResponseEntity<ErrorResponse> responseEntity = ResponseEntity.status(HttpStatus.UNAUTHORIZED)
