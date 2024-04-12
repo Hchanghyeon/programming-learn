@@ -14,7 +14,7 @@ export const Header = () => {
             setIsLoggedIn(false); // 없으면 로그아웃 상태로 설정
             setNickname("");
         }
-    }, []); 
+    }, []);
 
     return (
         <HeaderContainer>
@@ -24,9 +24,11 @@ export const Header = () => {
             <Navigation>
                 {isLoggedIn ? (
                     <>
+                        <StyledLink to="/chatrooms">채팅방 목록</StyledLink>
                         <NicknameContent>
                             {nickname} 님
                         </NicknameContent>
+
                     </>
 
                 ) : (

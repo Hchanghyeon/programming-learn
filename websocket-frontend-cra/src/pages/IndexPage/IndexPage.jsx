@@ -18,6 +18,6 @@ export const IndexPage = () => {
     return <>
         <Header />
         <IndexSection/>
-        {isLoggedIn && <FloatingMenu />}
+        <FloatingMenu />
     </>;
 }
