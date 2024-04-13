@@ -1,4 +1,4 @@
-package com.study;
+package com.study.echo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -9,7 +9,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-public class DiscardServer {
+public class EchoServer {
 
     private static final Integer PORT = 8888;
 
@@ -25,7 +25,7 @@ public class DiscardServer {
                         @Override
                         protected void initChannel(final SocketChannel socketChannel) {
                             final ChannelPipeline channelPipeline = socketChannel.pipeline();
-                            channelPipeline.addLast(new DiscardServerHandler());
+                            channelPipeline.addLast(new EchoServerHandler());
                         }
                     });
 
