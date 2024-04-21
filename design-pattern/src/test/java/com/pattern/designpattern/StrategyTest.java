@@ -3,6 +3,7 @@ package com.pattern.designpattern;
 import org.junit.jupiter.api.Test;
 
 import com.pattern.designpattern.strategy.ContextV1;
+import com.pattern.designpattern.strategy.ContextV2;
 import com.pattern.designpattern.strategy.Logic1;
 import com.pattern.designpattern.strategy.Logic2;
 
@@ -17,5 +18,12 @@ public class StrategyTest {
         Logic2 logic2 = new Logic2();
         ContextV1 contextV2 = new ContextV1(logic2);
         contextV2.execute();
+    }
+
+    @Test
+    void strategyV2(){
+        ContextV2 contextV2 = new ContextV2();
+        contextV2.execute(new Logic1());
+        contextV2.execute(new Logic2());
     }
 }
