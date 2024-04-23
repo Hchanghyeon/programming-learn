@@ -22,7 +22,7 @@ public class WeatherData implements Subject {
 
     @Override
     public void notifyObservers() {
-        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
+        observers.forEach(observer -> observer.update());
     }
 
     public void measurementsChanged(){
@@ -34,5 +34,13 @@ public class WeatherData implements Subject {
         this.humidity = humidity;
         this.pressure = pressure;
         measurementsChanged(); // setMeasurements로 기상 스테이션으로부터 변경된 값을 인지하여 옵저버들에게 알리는 코드
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
     }
 }
