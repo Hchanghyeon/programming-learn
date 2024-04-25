@@ -8,7 +8,7 @@ public class NormalSingleton {
 
     public static synchronized NormalSingleton getInstance(){ // 멀티쓰레드 환경에서 동시성 문제 발생
         if(normalSingleton == null){
-            return new NormalSingleton();
+            normalSingleton = new NormalSingleton();
         }
 
         return normalSingleton;
