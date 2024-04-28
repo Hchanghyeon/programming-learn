@@ -1,0 +1,9 @@
+spring:
+  threads:
+    virtual:
+      enabled: true # 버츄어 스레드 활성화 -> @Async 사용시 버츄어 스레드 활성화를 시키면 SimpleAsyncTaskExecutor로 변경됨
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
