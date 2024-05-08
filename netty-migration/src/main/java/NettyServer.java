@@ -25,12 +25,12 @@ public class NettyServer {
             final ServerBootstrap bootstrap = new ServerBootstrap(); // 네티 서버에 대한 역할 설정(채널과 이벤트 루프 그룹의 초기화 등)
             bootstrap.group(bossGroup, workerGroup) // group 등록
                     .channel(NioServerSocketChannel.class) // 소켓 채널을 비동기로 할 것인지 동기로 할 것인지
-                    .childHandler(new NettyServerChannelInitializer()); // 채널 초기화하면서 파이프라인 및 핸들러 등록
+                    .childHandler(new NettyServerChannelInitializer()); // 채널 초기화하면서 파이프라인 및 핸들러 등록(Server는 child)
 
             final ChannelFuture future = bootstrap.bind(PORT).sync(); // 비동기로 수행되는 bind() 처리를 sync를 통해 Blocking
             future.channel().closeFuture().sync(); // 서버 종료도 Blocking을 하여 동기적으로 처리하도록 구현
         } catch (InterruptedException e) {
-            throw new RuntimeException("인터럽트 발생", e);
+            throw new RuntimeException("interrupt occurred", e);
         } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();

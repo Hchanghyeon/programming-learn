@@ -14,12 +14,12 @@ public class AddUUIDHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRegistered(final ChannelHandlerContext ctx) throws Exception {
-        log.info("이벤트 루프에 채널 등록");
+        log.info("channelRegistered");
     }
 
     @Override
     public void channelActive(final ChannelHandlerContext ctx) throws Exception {
-        log.info("채널 활성화");
+        log.info("channelActive");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class AddUUIDHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void exceptionCaught(final ChannelHandlerContext ctx, final Throwable cause) throws Exception {
-        log.warning("예외 발생");
+        log.warning("exception occurred");
         cause.printStackTrace();
         ctx.close();
     }
