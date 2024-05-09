@@ -28,3 +28,6 @@
 
 1. SimpleChannelInboundHandler를 이용하고, 파일의 맨마지막에 END를 붙임
 2. 이것을 channelRead0에서 데이터를 수신받을 때 마다 공용으로 쓰는 Buffer를 두고 End문자열이 발견되는 순간 저장로직으로 저장 수행
+
+### 결과
+![Untitled](https://github.com/Hchanghyeon/programming-learn/assets/92444744/e0895122-189e-4f04-87d7-de8671f9cb8e)
