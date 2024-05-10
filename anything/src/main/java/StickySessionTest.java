@@ -1,3 +1,7 @@
+/*
+ * 똑같은 문자열은 항상 동일한 HashCode를 갖게 됨
+ */
+
 public class StickySessionTest {
     public static void main(String[] args) {
         String text = "123.123.123.123";
