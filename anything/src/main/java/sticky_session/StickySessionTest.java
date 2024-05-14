@@ -1,4 +1,4 @@
-/*
+package sticky_session;/*
  * 똑같은 문자열은 항상 동일한 HashCode를 갖게 됨
  */
 
