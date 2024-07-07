@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pessimistic
+    username: root
+    password:
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+        query.in_clause_parameter_padding: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
