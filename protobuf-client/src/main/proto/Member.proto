@@ -1,0 +1,15 @@
+syntax = "proto3";
+package domain;
+option java_package = "com.proto.file";
+option java_outer_classname = "MemberRequest";
+
+enum MemberType {
+  NORMAL = 0;
+  VIP = 1;
+}
+
+message Member {
+  string id = 1;
+  string nickname = 2;
+  MemberType memberType = 3;
+}
