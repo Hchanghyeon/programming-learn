@@ -1,0 +1,33 @@
+services:
+  database-mysql-1:
+    image: mysql:8.0.21
+    container_name: mysql-1
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    ports:
+      - "11077:3306"
+    volumes:
+      - ./mysql-1:/var/lib/mysql
+
+  database-mysql-2:
+    image: mysql:8.0.21
+    container_name: mysql-2
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    ports:
+      - "11078:3306"
+    volumes:
+      - ./mysql-2:/var/lib/mysql
+
