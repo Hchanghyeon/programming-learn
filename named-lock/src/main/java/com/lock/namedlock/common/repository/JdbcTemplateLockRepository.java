@@ -41,6 +41,8 @@ public class JdbcTemplateLockRepository implements LockRepository {
     }
 
     private void checkResult(final Integer result, final String key, final String lockType) {
+        log.info("{}", result);
+
         if (result != 1) {
             log.warn("{} error type : {}", key, lockType);
         }

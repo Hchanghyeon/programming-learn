@@ -3,7 +3,6 @@ package com.lock.namedlock.post.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lock.namedlock.member.domain.Member;
@@ -33,7 +32,7 @@ public class PostService {
                 .toList();
     }
 
-    @Transactional(transactionManager = "transactionManager", propagation = Propagation.REQUIRES_NEW)
+    @Transactional
     public PostResponse createPost(final PostCreateRequest request) {
         final Long memberId = request.getMemberId();
         final Long createdPostCount = postRepository.countByMemberId(memberId);
