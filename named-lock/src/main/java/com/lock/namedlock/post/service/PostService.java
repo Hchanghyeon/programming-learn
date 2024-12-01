@@ -14,7 +14,9 @@ import com.lock.namedlock.post.dto.PostResponse;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PostService {
@@ -45,7 +47,7 @@ public class PostService {
                 .orElseThrow(() -> new EntityNotFoundException("MEMBER NOT FOUNDED"));
 
         final Post post = request.toEntity(member);
-
+        
         return PostResponse.of(postRepository.save(post));
     }
 }

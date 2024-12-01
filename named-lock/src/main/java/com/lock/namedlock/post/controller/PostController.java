@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lock.namedlock.post.dto.PostCreateRequest;
 import com.lock.namedlock.post.dto.PostResponse;
-import com.lock.namedlock.post.service.PostLockService;
 import com.lock.namedlock.post.service.PostService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +21,6 @@ import lombok.RequiredArgsConstructor;
 public class PostController {
 
     private final PostService postService;
-    private final PostLockService postLockService;
 
     @GetMapping
     public ResponseEntity<List<PostResponse>> getPosts() {
@@ -31,6 +29,6 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<PostResponse> createPost(@RequestBody PostCreateRequest request) {
-        return ResponseEntity.ok(postLockService.createPost(request));
+        return ResponseEntity.ok(postService.createPost(request));
     }
 }

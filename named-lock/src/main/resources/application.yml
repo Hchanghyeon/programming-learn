@@ -1,8 +1,8 @@
 spring:
   datasource:
-    jdbcUrl: jdbc:mysql:///test_db?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
-    username:
-    password:
+    jdbcUrl: jdbc:mysql://133.186.201.56:3306/test_db?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: BeSt3489!!
     driverClassName: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -17,7 +17,7 @@ spring:
 
 jdbc:
   datasource:
-    jdbcUrl: jdbc:mysql:///test_db?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
-    username:
-    password:
+    jdbcUrl: jdbc:mysql://114.110.160.89:3306/test_db?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
+    username: firewall
+    password: best3489##
     driverClassName: com.mysql.cj.jdbc.Driver
